@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import express, { Application, Request, Response } from 'express';
 import cors from 'cors';
 import { StudentRoute } from './app/modules/student/student.route';
@@ -30,6 +31,15 @@ const getAController = (req: Request, res: Response) => {
 };
 
 app.get('/', getAController);
+
+
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+const test = async (req: Request, res: Response) => {
+ Promise.reject()
+};
+
+app.get('/', test);
+
 
 app.use(globalErrorHandler);
 

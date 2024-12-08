@@ -16,7 +16,8 @@ const getSingleStudent = catchAsync(async (req, res) => {
 });
 
 const getAllStudent: RequestHandler = catchAsync(async (req, res) => {
-  const result = await StudentServices.getAllStudentsFromDB(); // Fixed here
+
+  const result = await StudentServices.getAllStudentsFromDB(req.query); // Fixed here
 
   sendResponse(res, {
     statusCode: httpStatus.OK,
